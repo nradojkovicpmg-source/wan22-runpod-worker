@@ -5,7 +5,7 @@ RUN comfy-node-install \
     comfyui-kjnodes \
     comfyui-videohelpersuite \
     rgthree-comfy \
-    comfyui-aspect-ratio-crop-node
+    comfyui-vrgamedevgirl
 
 # PainterI2VAdvanced is not in the comfy registry yet -- install from GitHub
 RUN cd /comfyui/custom_nodes && \
