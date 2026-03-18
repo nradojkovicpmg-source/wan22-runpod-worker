@@ -26,5 +26,9 @@ RUN mkdir -p /comfyui/models/upscale_models && \
     wget -q -O /comfyui/models/upscale_models/RealESRGAN_x2plus.pth \
       "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.1/RealESRGAN_x2plus.pth"
 
+# Override extra_model_paths to also map diffusion_models/ from the volume
+COPY extra_model_paths.yaml /comfyui/extra_model_paths.yaml
+
 # Large models (WAN 2.2 diffusion, CLIP, VAE) are loaded at runtime from
 # the attached RunPod Network Volume (mounted at /runpod-volume/models/).
+# UNETLoader scans: models/unet/ AND models/diffusion_models/
